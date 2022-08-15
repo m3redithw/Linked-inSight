@@ -1,1 +1,2 @@
-# linkedin-data-science-project
+# LinkedIn Data Science
+by **Meredith Wang**
