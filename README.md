@@ -42,19 +42,30 @@ Education level is classified into two categories:
 | Skills       | String                       | The top 10 skills from candidates of job posting                |
 
 #### 1️⃣  Data Acquisition
-<detials>
+<details>
 <summary> Gather data from Linkedin using Selenium</summary>
 
 - Install Selenium web driver
 
 - Create function to guide driver to automate job search
 
-</detials>
+- Store data locally to a .csv file
+
+</details>
 
 [Acquisition](acquisition.ipynb)
 
 #### 2️⃣  Data Preparation
+<details>
+<summary> Missing Values</summary>
 
+- When job posting does not have enough candidates to generate insight, the **education level** and **skills** will be missing
+
+- Missing values are manually filled by going to URL of job posting, and find another positng with the same job level, role, and company
+
+- Dummy Variables
+
+</details>
 #### Data Exploration
 
 #### Modeling
