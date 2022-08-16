@@ -66,6 +66,7 @@ Education level is classified into two categories:
 - Dummy Variables
 
 </details>
+
 #### Data Exploration
 
 #### Modeling
