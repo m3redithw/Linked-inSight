@@ -1,6 +1,7 @@
 # Essential libraries
 import os
 import json
+import time
 import requests
 
 # Ignore warnings
@@ -40,12 +41,20 @@ from sklearn.linear_model import TweedieRegressor
 
 from sklearn.model_selection import train_test_split
 
-# Local files
-# import env
-# import acquire
-# import prepare
-# import clustering
-# import modeling
+# NLP
+import re
+import unicodedata
+import nltk
+from nltk.tokenize.toktok import ToktokTokenizer
+from nltk.corpus import stopwords
+
+# Selenium
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 # Text display
 import colorama
 from colorama import Fore
