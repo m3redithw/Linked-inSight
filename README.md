@@ -12,3 +12,28 @@ by **Meredith Wang**
 <a href="#"><img alt="SciPy" src="https://img.shields.io/badge/SciPy-1560bd.svg?logo=scipy&logoColor=white"></a>
 <a href="#"><img alt="GeoPandas" src="https://img.shields.io/badge/GeoPandas-1faecf.svg?logo=python-geopandas&logoColor=white"></a>
 
+
+## :globe_with_meridians:   Project Description
+
+## :star2:  Project Goals
+
+## :memo:   Initial Questions
+▪
+▪
+▪
+
+## :compass:    Outline/Planning
+
+## :open_file_folder:   Data Dictionary
+
+## Data Acquisition
+
+## Data Preparation
+
+## Data Exploration
+
+## Modeling
+
+## Key Findings
+
+## Conclusion
