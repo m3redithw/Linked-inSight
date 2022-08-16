@@ -41,14 +41,24 @@ Education level is classified into two categories:
 | Edu Level    | Int                          | Percentage of education level of candidates of the job position |
 | Skills       | String                       | The top 10 skills from candidates of job posting                |
 
-## :mag:    Data Acquisition
+#### 1️⃣  Data Acquisition
+<detials>
+<summary> Gather data from Linkedin using Selenium</summary>
 
-## Data Preparation
+- Install Selenium web driver
 
-## Data Exploration
+- Create function to guide driver to automate job search
 
-## Modeling
+</detials>
 
-## Key Findings
+[Acquisition](acquisition.ipynb)
+
+#### 2️⃣  Data Preparation
+
+#### Data Exploration
+
+#### Modeling
+
+#### Key Findings
 
 ## Conclusion
