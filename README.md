@@ -25,8 +25,18 @@ by **Meredith Wang**
 ## :compass:    Outline/Planning
 
 ## :open_file_folder:   Data Dictionary
+| **Variable** | **Value**                    | **Meaning**                                                     |
+|:-------------|:-----------------------------|:----------------------------------------------------------------|
+| Link         | String                       | The url of the job posting                                      |
+| Company      | String                       | The company name of the job posting                             |
+| Mode         | On-Site; Remote; Hybrid      | The working environment of the job posting                      |
+| Type         | Full-time; Contract          | The contract type of the job posting                            |
+| Level        | Entry; Associate; Mid-Senior | The job level of the job posting                                |
+| Requirements | String                       | The requirements in the description section of the job posting  |
+| Edu Level    | Int                          | Percentage of education level of candidates of the job position |
+| Skills       | String                       | The top 10 skills from candidates of job posting                |
 
-## Data Acquisition
+## :mag:    Data Acquisition
 
 ## Data Preparation
 
