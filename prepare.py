@@ -5,11 +5,21 @@ def prep_data(df):
     This function takes in a dataframe and return the dataframe with meaningless column dropped,
     and dummy variables for categorical feature concatenated.
     '''
-    df.drop(columns = 'link', inplace = True)
+    # Dummy variables for job level
     level_dummy = pd.get_dummies(df[['level']], dummy_na=False, drop_first=False)
     df = pd.concat([df, level_dummy], axis=1)
     df.rename(columns = {'level_Associate':'associate', 'level_Entry':'entry',
                               'level_Mid-Senior':'mid_senior'}, inplace = True)
+    
+    # Turning non-bachelor education levels to one category vs. bachelor
+    df['edu_higher'] = df['edu_master']+df['edu_phd']
+    df['edu_b_dmnt']=((df['edu_bachelor']+df['edu_other']) >= df['edu_higher'])
+    df['label'] = df.edu_b_dmnt.map({False: 'h', True: 'b'})
+    
+    # Drop columns
+    cols = ['link', 'edu_bachelor', 'edu_master', 'edu_phd', 'edu_other', 'edu_higher']
+    df.drop(columns = cols, inplace = True)
+    
     return df
 
 def basic_clean(string):
