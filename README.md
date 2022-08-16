@@ -67,8 +67,10 @@ Education level is classified into two categories:
 
 </details>
 
-#### :three: Data Exploration
+[Preparation](preparation.ipynb)
 
+#### :three: Data Exploration
+[Exploration](exploration.ipynb)
 #### :four: Modeling
 
 #### :five:    Modeling Evaluation
