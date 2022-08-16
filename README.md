@@ -14,9 +14,13 @@ by **Meredith Wang**
 
 
 ## :globe_with_meridians:   Project Description
-
+**Job hunting** is a tedious and stressful process. Stacked paragraphs of description and long list of requirement from the job listings are only adding fuel to the flame. This project aims to help me and other aspiring **data science** professionals get a clear insight on the role they're pursuing, and to provide a better understanding on the education level of their competitors.
 ## :star2:  Project Goals
+Our goal is to predict the candidates' **education level** of job postings using **Natural Language Processing** techniques to analyze data-science job postings on Linkedin.
 
+Education level is classified into two categories:
+- Bachelor (candidate whose highest education level is a Bachelor degree)
+- Higher (candidate whose highest education level is Master/PhD)
 ## :memo:   Initial Questions
 ▪
 ▪
