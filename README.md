@@ -22,9 +22,10 @@ Education level is classified into two categories:
 - Bachelor (candidate whose highest education level is a Bachelor degree)
 - Higher (candidate whose highest education level is Master/PhD)
 ## :memo:   Initial Questions
-▪
-▪
-▪
+▪ Is role dependent on the education level of candidates?
+
+▪ Is job level dependent on the education level of candidates?
+
 
 ## :compass:    Outline/Planning
 
