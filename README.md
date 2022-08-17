@@ -1,4 +1,5 @@
-![](logo.png)
+![logo](https://user-images.githubusercontent.com/105242871/185154594-0e60bd92-b70c-4d5a-a3b6-3c3b00c2b7bf.png)
+
 # Linkedin Data Science
 by **Meredith Wang**
 
