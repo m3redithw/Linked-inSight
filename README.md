@@ -79,4 +79,4 @@ Education level is classified into two categories:
 
 ## :key:    Key Findings
 
-## Conclusion
+## :high_brightness:    Recommendations
