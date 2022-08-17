@@ -27,8 +27,6 @@ Education level is classified into two categories:
 ▪ Is job level dependent on the education level of candidates?
 
 
-## :compass:    Outline/Planning
-
 ## :open_file_folder:   Data Dictionary
 | **Variable** | **Value**                    | **Meaning**                                                     |
 |:-------------|:-----------------------------|:----------------------------------------------------------------|
@@ -41,6 +39,8 @@ Education level is classified into two categories:
 | Edu Level    | Int                          | Percentage of education level of candidates of the job position |
 | Skills       | String                       | The top 10 skills from candidates of job posting                |
 
+
+## :compass:    Outline/Planning
 #### 1️⃣  Data Acquisition
 <details>
 <summary> Gather data from Linkedin using Selenium</summary>
@@ -75,6 +75,8 @@ Education level is classified into two categories:
 
 #### :five:    Modeling Evaluation
 
-#### Key Findings
+## :repeat:   Steps to Reproduce
+
+## :key:    Key Findings
 
 ## Conclusion
