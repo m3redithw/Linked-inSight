@@ -132,6 +132,9 @@ Categorical features (e.g. `role`, `level`) are turned into dummy variables to q
 - Top skills among data science candidates: **SQL, Python, Machine Learning, Data Analysis, R, C/C++, Tableau, Data Visualization**
 
 - Final model decision tree is expected to predict with 87% accuracy on future unseen data.
+
+<img width="1120" alt="Screen Shot 2022-08-18 at 15 16 05" src="https://user-images.githubusercontent.com/105242871/185498899-f9d1efc2-bccc-4d5d-b480-1d91b94afa3c.png">
+
 ##  🔜    Next Steps
 - For the purpose of completing a MVP, I was only able to gather 243 observations. That is one of the reason there's a class imbalance in our dataset, and why the model is failing to converge and having a higher accuracy. Therefore, gathering more data would be important.
 
