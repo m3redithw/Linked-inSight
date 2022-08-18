@@ -20,12 +20,17 @@ by **Meredith Wang**
 Our goal is to predict the candidates' **education level** of job postings using **Natural Language Processing** techniques to analyze data-science job postings on Linkedin.
 
 Education level is classified into two categories:
-- Bachelor (candidate whose highest education level is a Bachelor degree)
-- Higher (candidate whose highest education level is Master/PhD)
+- Undergraduate (candidate whose highest education level is a Bachelor degree, and those who have 'other' degrees)
+- Graduate (candidate whose highest education level is Master/PhD)
 ## :memo:   Initial Questions
+▪ What does overall candidate's education distribution look like?
+
 ▪ Is role dependent on the education level of candidates?
 
 ▪ Is job level dependent on the education level of candidates?
+
+▪ Is job description different for graduate vs. undergraduate group?
+
 
 
 ## :open_file_folder:   Data Dictionary
@@ -64,20 +69,77 @@ Education level is classified into two categories:
 
 - Missing values are manually filled by going to URL of job posting, and find another positng with the same job level, role, and company
 
-- Dummy Variables
-
 </details>
+- Dummy Variables
+Categorical features (e.g. `role`, `level`) are turned into dummy variables to quantify the features, so we can use them in the models.
 
 [Preparation](preparation.ipynb)
 
 #### :three: Data Exploration
+- Address initial questions to find what are the key features that are associated with undragudate and graduate group
+
+- Explore each feature's correlation with education distribution
+
+- Use visualizations to better understand the relationship between features and target variable
+
+#### :four:    Statistical Testing & Modeling	
+- Conduct T-Test for categorical variable vs. numerical variable
+	
+- Conduct Chi^2 Test for categorical variable vs. categorical variable
+
+- Conclude hypothesis and address the initial questions
+
 [Exploration](exploration.ipynb)
-#### :four: Modeling
 
-#### :five:    Modeling Evaluation
+#### :five: Modeling
+- Create decision tree classifer and fit train dataset
 
+- Find the max depth for the best performing decision tree classifer (evaluated using classification report, accuracy score)
+
+- Create random forest classifier and fit train dataset
+
+- Find the max depth for the best performing random forest classifier (evaluated using classification report, accuracy score)
+
+- Create logistic regression model and fit train dataset
+
+- Find the parameter C for the best performing logistic regression model (evaluated using classification report, accuracy score)
+
+- Create XGBoost classifier and fit train dataset
+
+- Pick the top 3 models among all the models and evaluate performance on validate dataset
+
+- Pick the model with highest accuracy and evaluate on test dataset
+
+[Modeling](modeling.ipynb)
 ## :repeat:   Steps to Reproduce
-
+- [x] You will need to have a Linkedin Premium account. Store your password locally in a secret text file.
+- [x] You will need to install Selenium webdrive. Please follow documentation and steps in **acquisition** notebook.
+- [x] Clone my repo (including **imports.py**, **prepare.py**) 
+- [x] Libraries used are pandas, matplotlib, seaborn, plotly, sklearn, scipy, selenium, nltk
+- [x] Follow instructions in each notebook throughout the pipeline (**preparation**, **exploration**, **modeling**)and README file
+- [x] Good to run workbook and read through white paper :smile_cat:
 ## :key:    Key Findings
+- **Less than 1/4** of data science job posting's candidate's highest education level is Bachelor degree.
 
-## :high_brightness:    Recommendations
+- Candidate's education distribution is dependent on role (scientist, analyst, engineer, managerial roles)
+
+- Candidate's education distribution is independent with job level (entry, associate, mid-senior)
+
+- For entry level positions, the amount of candidates with graduate degrees is **significantly more** than those with undergrad degrees.
+
+- Top phrases mentioned in data science job descriptions are: **Data Analytics, no. of years experience, SQL, Python, Master Degree, Business** 
+
+- Top skills among data science candidates: **SQL, Python, Machine Learning, Data Analysis, R, C/C++, Tableau, Data Visualization**
+
+- Final model decision tree is expected to predict with 87% accuracy on future unseen data.
+##  🔜    Next Steps
+- For the purpose of completing a MVP, I was only able to gather 243 observations. That is one of the reason there's a class imbalance in our dataset, and why the model is failing to converge and having a higher accuracy. Therefore, gathering more data would be important.
+
+- This project is solely focused on Data Science related job positions in the United States. We can expand the field to other areas in tech (e.g. web development, cloud administration, etc.) and compare the education distribution across fields. We can also expand countries to see if such a master-degree dominant poll is solely in the United States.
+
+- There are extensive amount of master programs, and there is no indicator of the quality of the program itself. For further study, I would like to include parameters that distinguish different levels of degree accomplished.
+
+## :high_brightness:    Recommendations/Further Questions
+- For candidates who don't have a graduate degree, or a bachelor degree in STEM, I suggest you focus on mastering the "top skills" that we concluded in the explore section.
+
+- What exactly is the difference between candidates who acquire the skills on their own, and those who went through a graduate program that cost $50k on average? How small is the chance for someone without a desired degree to "survive" the sea of resumes?
