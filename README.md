@@ -177,7 +177,8 @@ The following steps apply for both:
 
 - Final model decision tree is expected to predict with 87% accuracy on future unseen data.
 
-<img width="1120" alt="model_evaluation" src="https://user-images.githubusercontent.com/105242871/185520556-54470d3f-b583-4a23-8a10-cfb18b691978.png">
+<img width="805" alt="model_scores" src="https://user-images.githubusercontent.com/105242871/185667751-95813b99-9b30-4812-84c1-1a6e0f9d1e7a.png">
+
 
 
 ##  🔜    Next Steps
