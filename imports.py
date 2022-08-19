@@ -22,7 +22,9 @@ import seaborn as sns
 import plotly.express as px
 import matplotlib.pyplot as plt
 import missingno as msno
+from wordcloud import WordCloud
 from mpl_toolkits.mplot3d import Axes3D
+
 
 # Sklearn
 from sklearn.cluster import KMeans, DBSCAN
@@ -41,6 +43,19 @@ from sklearn.linear_model import TweedieRegressor
 
 from sklearn.model_selection import train_test_split
 
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree, export_text
+from sklearn.metrics import recall_score, precision_score, f1_score, accuracy_score
+from sklearn.metrics import classification_report, confusion_matrix, plot_confusion_matrix
+
+# XGBoost classifier
+from xgboost import XGBClassifier
+
 # NLP
 import re
 import unicodedata
@@ -58,3 +73,4 @@ from selenium.webdriver.support import expected_conditions as EC
 # Text display
 import colorama
 from colorama import Fore
+from pprint import pprint
