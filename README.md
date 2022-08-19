@@ -61,6 +61,8 @@ Education level is classified into two categories:
 
 [Acquisition](acquisition.ipynb)
 
+![selenium](https://user-images.githubusercontent.com/105242871/185518199-8de21772-c250-419b-a40f-524235f647c7.gif)
+
 #### 2️⃣  Data Preparation
 <details>
 <summary> Missing Values</summary>
@@ -70,7 +72,8 @@ Education level is classified into two categories:
 - Missing values are manually filled by going to URL of job posting, and find another positng with the same job level, role, and company
 
 </details>
-- Dummy Variables
+
+**Dummy Variables**
 Categorical features (e.g. `role`, `level`) are turned into dummy variables to quantify the features, so we can use them in the models.
 
 [Preparation](preparation.ipynb)
