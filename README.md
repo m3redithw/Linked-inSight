@@ -1,6 +1,6 @@
 ![logo](https://user-images.githubusercontent.com/105242871/185154594-0e60bd92-b70c-4d5a-a3b6-3c3b00c2b7bf.png)
 
-# Linked inSight
+# [Linked inSight](https://www.canva.com/design/DAFJozqrh6w/7KibP6_xsjhb679nryBVNg/view?utm_content=DAFJozqrh6w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 by **Meredith Wang**
 
 <a href="#"><img alt="Python" src="https://img.shields.io/badge/Python-013243.svg?logo=python&logoColor=white"></a>
