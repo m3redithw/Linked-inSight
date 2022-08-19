@@ -1,5 +1,6 @@
 from imports import *
-def overall_distribution():
+from prepare import prep_data, basic_clean, lemmatize, remove_stopwords, split, clean, clean_skills
+def overall_distribution(train):
     '''
     This function plot the overall candidate education distribution accross all jobs
     '''
@@ -14,7 +15,7 @@ def overall_distribution():
     plt.title('Candidate Education Distribution',fontsize=18)
     plt.show()
 
-def role():
+def role(train):
     '''
     This functions plot the education distribution per role
     '''
@@ -24,7 +25,7 @@ def role():
     plt.xlabel('Role', fontsize = 16)
     plt.ylabel('Count', fontsize = 16)
 
-def level():
+def level(train):
     '''
     This functions plot the education distribution per level
     '''
@@ -34,7 +35,7 @@ def level():
     plt.xlabel('Job Level', fontsize = 16)
     plt.ylabel('Count', fontsize = 16)
 
-def requirements():
+def requirements(train):
     '''
     This function visualize the top 20 most frequent words in requirement
     Detailed steps please reference explore.ipynb
@@ -57,3 +58,75 @@ def requirements():
     [['u', 'g']]\
     .sort_values(by='g')\
     .plot.barh(stacked=True, figsize = (16,10), color = ['#45818e', '#783f04'])
+
+def g_bigrams(train):
+    '''
+    This function plot the wordcloud for top bigrams in the requirements for graduate degree category
+    '''
+    g_text = ' '.join(train[train.label == 'g'].requirements)
+    g_text = clean(g_text)
+    top_20_g_bigrams = (pd.Series(nltk.ngrams(g_text.split(), 2))
+                      .value_counts()
+                      .head(20))
+    data = {k[0] + ' ' + k[1]: v for k, v in top_20_g_bigrams.to_dict().items()}
+    img = WordCloud(background_color='white', width=800, height=400, colormap = 'YlOrBr_r').generate_from_frequencies(data)
+    plt.figure(figsize=(8, 4))
+    plt.imshow(img)
+    plt.axis('off')
+    plt.show()
+
+def u_bigrams(train):
+    '''
+    This function plot the wordcloud for top bigrams in the requirements for undergraduate degree category
+    '''
+
+    u_text = ' '.join(train[train.label == 'u'].requirements)
+    u_text = clean(u_text)
+    top_20_u_bigrams = (pd.Series(nltk.ngrams(u_text.split(), 2))
+                      .value_counts()
+                      .head(20))
+    data = {k[0] + ' ' + k[1]: v for k, v in top_20_u_bigrams.to_dict().items()}
+    colors = ['#194569', '#5F84A2', '#91AEC4', '#B7D0E1', '#CADEED', '#DBECF4']
+    img = WordCloud(background_color='white', width=800, height=400, colormap='Blues_r').generate_from_frequencies(data)
+    plt.figure(figsize=(8, 4))
+    plt.imshow(img)
+    plt.axis('off')
+    plt.show()
+
+
+
+def g_skills(train):
+    '''
+    This function generates the wordcounts for top skills for graduate degree
+    '''
+    # Separating skills into Series
+    g_skills = ' '.join(train[train.label == 'g'].skills)
+    g_skills = clean_skills(g_skills)
+    top_20_g_skill_bigrams = (pd.Series(nltk.ngrams(g_skills.split(), 2))
+                      .value_counts()
+                      .head(20))
+    data = {k[0] + ' ' + k[1]: v for k, v in top_20_g_skill_bigrams.to_dict().items()}
+    img = WordCloud(background_color='white', width=800, height=400, colormap='YlOrBr_r').generate_from_frequencies(data)
+    plt.figure(figsize=(8, 4))
+    plt.imshow(img)
+    plt.axis('off')
+    plt.show()
+
+def u_skills(train):
+    
+    '''
+    This function generates the wordcounts for top skills for undergraduate degree
+    '''
+    # Separating skills into Series
+    u_skills = ' '.join(train[train.label == 'u'].skills)
+    u_skills = clean_skills(u_skills)
+
+    top_20_u_skill_bigrams = (pd.Series(nltk.ngrams(u_skills.split(), 2))
+                      .value_counts()
+                      .head(20))
+    data = {k[0] + ' ' + k[1]: v for k, v in top_20_u_skill_bigrams.to_dict().items()}
+    img = WordCloud(background_color='white', width=800, height=400,  colormap='Blues_r').generate_from_frequencies(data)
+    plt.figure(figsize=(8, 4))
+    plt.imshow(img)
+    plt.axis('off')
+    plt.show()
