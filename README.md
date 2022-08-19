@@ -73,8 +73,36 @@ Education level is classified into two categories:
 
 </details>
 
-**Dummy Variables**
+<details>
+<summary> Dummy Variables</summary>
+
 Categorical features (e.g. `role`, `level`) are turned into dummy variables to quantify the features, so we can use them in the models.
+
+</details>
+
+<details>
+<summary> Initial Text Cleaning</summary>
+
+Job role names vary from companies. For example, for data scientist position, there are names like "Data Scientist II", "Data Scientist, Charging Data and Modeling", "Data Scientist - Credit Card", etc... For the purpose of analyzing the general category's relationship with the target variable, all roles are generalized to 4 categories: **Data Scientist, Data Analyst, Data Engineer, Managerial Roles**.
+
+</details>
+
+<details>
+<summary> Parsing Text</summary>
+
+- Convert text to all lower case for normalcy
+	
+- Remove any accented characters, non-ASCII characters
+	
+- Remove special characters
+	
+- Lemmatization
+	
+- Remove stopwords
+	
+- Store the clean text and the original text for use in future notebooks
+
+</details>
 
 [Preparation](preparation.ipynb)
 
@@ -122,6 +150,9 @@ Categorical features (e.g. `role`, `level`) are turned into dummy variables to q
 - [x] Follow instructions in each notebook throughout the pipeline (**preparation**, **exploration**, **modeling**)and README file
 - [x] Good to run workbook and read through white paper :smile_cat:
 ## :key:    Key Findings
+
+<img width="952" alt="overall_distribution" src="https://user-images.githubusercontent.com/105242871/185520569-11aa7c4f-9ad1-4045-8848-54dca2f9afb3.png">
+
 - **Less than 1/4** of data science job posting's candidate's highest education level is Bachelor degree.
 
 - Candidate's education distribution is dependent on role (scientist, analyst, engineer, managerial roles)
@@ -136,7 +167,8 @@ Categorical features (e.g. `role`, `level`) are turned into dummy variables to q
 
 - Final model decision tree is expected to predict with 87% accuracy on future unseen data.
 
-<img width="1120" alt="Screen Shot 2022-08-18 at 15 16 05" src="https://user-images.githubusercontent.com/105242871/185498899-f9d1efc2-bccc-4d5d-b480-1d91b94afa3c.png">
+<img width="1120" alt="model_evaluation" src="https://user-images.githubusercontent.com/105242871/185520556-54470d3f-b583-4a23-8a10-cfb18b691978.png">
+
 
 ##  🔜    Next Steps
 - For the purpose of completing a MVP, I was only able to gather 243 observations. That is one of the reason there's a class imbalance in our dataset, and why the model is failing to converge and having a higher accuracy. Therefore, gathering more data would be important.
