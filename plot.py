@@ -19,11 +19,18 @@ def role(train):
     '''
     This functions plot the education distribution per role
     '''
-    plt.figure(figsize = (16,8))
-    sns.countplot(x='role', hue='label', data=train, palette= ['#783f04','#45818e'])
-    plt.title('Education Distribution per Role', fontsize = 20)
-    plt.xlabel('Role', fontsize = 16)
-    plt.ylabel('Count', fontsize = 16)
+    pct = [['Data Scientist', 'bachelor', 22.333333],['Data Scientist', 'master', 58.888889],['Data Scientist', 'phd', 15.022222], ['Data Scientist', 'other', 3.266667],
+          ['Data Analyst', 'bachelor', 26.685714],['Data Analyst', 'master', 64.257143],['Data Analyst', 'phd', 5.942857],['Data Analyst', 'other',  3.914286],
+          ['Data Engineer','bachelor',28.342105],['Data Engineer', 'master', 62.421053],['Data Engineer', 'phd', 6.421053], ['Data Engineer', 'other', 2.710526],
+           ['Managerial Roles', 'bachelor', 13.882353], ['Managerial Roles', 'master',59.294118], ['Managerial Roles','phd', 22.117647], ['Managerial Roles', 'other', 4.529412]
+         ]
+    roledf = pd.DataFrame(pct, columns = ['Role', 'Highest Education Level', 'Percentage'])
+    plt.figure(figsize = (20,8))
+    sns.barplot(x='Role', y='Percentage',hue = 'Highest Education Level', data =roledf, palette = ['#45818e', '#783f04', '#e7dbcd', '#5b5b5b'])
+    # plt.ylim = (0.7,1)
+    plt.xlabel("Role", fontsize = 16)
+    plt.ylabel("Percentage", fontsize = 16)
+    plt.title("Education Distribution per Role", fontsize = 20)
 
 def level(train):
     '''
