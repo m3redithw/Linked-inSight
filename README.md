@@ -142,12 +142,23 @@ Job role names vary from companies. For example, for data scientist position, th
 
 [Modeling](modeling.ipynb)
 ## :repeat:   Steps to Reproduce
-- [x] You will need to have a Linkedin Premium account. Store your password locally in a secret text file.
+**NOTE:** The job postings data is not static. With that being said, the result of each run of auto-search would be different. Therefore, the insight from exploration and accuracy of models would be slightly different as well.
+
+- [x] You will need to have a Linkedin Premium account, preferrably a premium account so you can access part of data that's used as modeling features. Store your password locally in a secret text file.
 - [x] You will need to install Selenium webdrive. Please follow documentation and steps in **acquisition** notebook.
+- [x] Run driver and acquire the latest job postings on your own then store it in a .csv format file.
+
+**OR**
+
+- [x] You can choose to use my data that I generate analysis on. Please [contact me](wang.meredith09@gmail.com) for the .csv file.
+
+The following steps apply for both:
+
 - [x] Clone my repo (including **imports.py**, **prepare.py**) 
 - [x] Libraries used are pandas, matplotlib, seaborn, plotly, sklearn, scipy, selenium, nltk
 - [x] Follow instructions in each notebook throughout the pipeline (**preparation**, **exploration**, **modeling**)and README file
 - [x] Good to run workbook and read through white paper :smile_cat:
+
 ## :key:    Key Findings
 
 <img width="952" alt="overall_distribution" src="https://user-images.githubusercontent.com/105242871/185520569-11aa7c4f-9ad1-4045-8848-54dca2f9afb3.png">
