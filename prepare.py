@@ -6,7 +6,7 @@ def prep_data(df):
     and dummy variables for categorical feature concatenated.
     '''
     # Combine job requirements and skills
-    df['requirements'] = df['requirements'] + df['skills']
+    # df['requirements'] = df['requirements'] + df['skills']
     
     # Dummy variables for job level
     level_dummy = pd.get_dummies(df[['level']], dummy_na=False, drop_first=False)
@@ -17,16 +17,16 @@ def prep_data(df):
     df = pd.concat([df, role_dummy], axis=1)
     df.rename(columns = {'level_Associate':'associate', 'level_Entry':'entry',
                               'level_Mid-Senior':'mid_senior', 'role_Data Analyst':'analyst',
-                     'role_Data Engineer':'engineer', 'role_Data Science Manager': 'maganer',
+                     'role_Data Engineer':'engineer', 'role_Data Science Manager': 'manager',
                     'role_Data Scientist':'scientist'}, inplace = True)
     
     # Turning non-bachelor education levels to one category vs. bachelor
-    df['edu_higher'] = df['edu_master']+df['edu_phd']
-    df['edu_b_dmnt']=((df['edu_bachelor']+df['edu_other']) >= df['edu_higher'])
-    df['label'] = df.edu_b_dmnt.map({False: 'h', True: 'b'})
+    df['edu_graduates'] = df['edu_master']+df['edu_phd']
+    df['edu_u_dmnt']=((df['edu_bachelor']+df['edu_other']) >= df['edu_graduates'])
+    df['label'] = df.edu_u_dmnt.map({False: 'g', True: 'u'})
     
     # Drop columns
-    cols = ['link', 'edu_bachelor', 'edu_master', 'edu_phd', 'edu_other', 'edu_higher']
+    cols = ['link']
     df.drop(columns = cols, inplace = True)
     
     return df
@@ -160,3 +160,15 @@ def split(df):
     train, validate = train_test_split(train, test_size=.3, random_state=123)
     
     return train, validate, test
+
+def clean(text):
+    '''
+    This function combines the above steps and added extra stop words to clean requirements text
+    '''
+    return remove_stopwords(lemmatize(basic_clean(text)), extra_words = ['experience', 'ability', 'skill'])
+
+def clean_skills(text):
+    '''
+    This function combine the above steps and added extra stop words to clean skills text
+    '''
+    return remove_stopwords(lemmatize(basic_clean(text)), extra_words = ['year', 'experience', 'ability', 'skill', 'programming', 'language'])
