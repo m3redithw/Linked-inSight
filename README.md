@@ -89,7 +89,7 @@ Job role names vary from companies. For example, for data scientist position, th
 <details>
 <summary> Parsing Text</summary>
 
-- Convert text to all lower case for normalcy
+- Convert text to all lower case for normality
 	
 - Remove any accented characters, non-ASCII characters
 	
